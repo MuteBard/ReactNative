@@ -15,11 +15,13 @@ import {View, Text} from 'react-native';
 //when creating a class component, there must be at least one method
 //that is the render method and it must reutrn at least some JSX
 class AlbumList extends Component {
-  return(
-    <View>
-      <Text>AlbumList!!</Text>
-    </View>
-  );
+  render(){
+    return(
+      <View>
+        <Text>AlbumList!!</Text>
+      </View>
+    );
+  }  
 }//classes do nt require semi colons
 
 export default AlbumList;
