@@ -1,27 +1,27 @@
-//you dont want to destructure the React import and eliminate React
-//some things are dependant on it for the JSX to work since it needs
-//to go from jsx -> react.createElem calls and for those calls to be 
-//recognized we will need react
-
 import React, {Component} from 'react'
 import {View, Text} from 'react-native';
-
-
-//functional components vs classbased components
-//functional components must return an amount of JSX
-
-//we are stating in extends that we want to borrow a bunch of 
-//functionality from this base component class 
-//when creating a class component, there must be at least one method
-//that is the render method and it must reutrn at least some JSX
+//https://www.youtube.com/watch?v=xmgY37oc_B4
+// DO NOT DO import axios from 'axios'
+import * as axios from 'axios';
+console.ignoredYellowBox = ['Remote debugger'];
 class AlbumList extends Component {
+  state = { albums: [] };
+
+  componentWillMount(){
+    axios.get('https://rallycoding.herokuapp.com/api/music_albums')
+        .then(resp => resp.data)
+        .then(data => this.setState({albums: data}))
+  }
+  
   render(){
+    // this.setState({albums: ['a','b','c']})
+    console.log(this.state.albums)
     return(
       <View>
         <Text>AlbumList!!</Text>
       </View>
     );
   }  
-}//classes do nt require semi colons
+}
 
 export default AlbumList;
