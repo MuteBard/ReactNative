@@ -8,12 +8,13 @@ import React from 'react';
 import {Text} from 'react-native';
 
 //Destructuring is used to reference our style
-const {textStyle} = styles;
+
 
 //Instead of using className = "class" in react, you use
 //style = {styleName} this is also called a property
 const Header = () =>{
-  return (<Text>Albums!</Text>);
+  const {textStyle} = styles;
+  return (<Text style={textStyle}>Albums!</Text>);
 };
 
 //CSS works differently within React Native. atm theres no bootstrap help (rip BS4)
