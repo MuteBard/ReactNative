@@ -1,25 +1,28 @@
-//rather than creating a seperate CSS file as we do in web apps
-//we put all of our style relating to a component within the component file
+`Goal our text should be centered and a border at the bottom. We need some
+mechanism, some nice way to do just that.
 
+The text tag right now is just about showing text and not much leverage on 
+positioning itself around the screen. Therefore we import the View tag.
+they are like our divs
 
-
+`
 import React from 'react';
-//destructured import
-import {Text} from 'react-native';
-
-//Destructuring is used to reference our style
+import {Text, View} from 'react-native';
 
 
-//Instead of using className = "class" in react, you use
-//style = {styleName} this is also called a property
 const Header = () =>{
-  const {textStyle} = styles;
-  return (<Text style={textStyle}>Albums!</Text>);
+  const {textStyle, viewStyle} = styles;
+  return (
+    <View style={viewStyle}>
+      <Text style={textStyle}>Albums!</Text>
+    </View>
+  );
 };
 
-//CSS works differently within React Native. atm theres no bootstrap help (rip BS4)
-//is there flexbox?
 const styles = {
+  viewStyle:{
+    backgroundColor:  'cyan'
+  },
   textStyle:{
     fontSize: 70
   }
