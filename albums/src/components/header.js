@@ -1,10 +1,8 @@
-`Goal our text should be centered and a border at the bottom. We need some
-mechanism, some nice way to do just that.
-
-The text tag right now is just about showing text and not much leverage on 
-positioning itself around the screen. Therefore we import the View tag.
-they are like our divs
-
+` ITS HERE!!!
+we will be using flexbox to position the content within our view, AH JUST LIKE 
+OLD TIMES (literally yesterday). 
+remember, justify content is updown 
+alignitmes is leftright
 `
 import React from 'react';
 import {Text, View} from 'react-native';
@@ -21,10 +19,19 @@ const Header = () =>{
 
 const styles = {
   viewStyle:{
-    backgroundColor:  'cyan'
+    backgroundColor:  '#f8f8f8',
+    justifyContent: 'center',
+    alignItems : 'center',
+    height : 60,
+    paddingTop: 15,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.2,
+    elevation: 2,
+    position: 'relative'
   },
   textStyle:{
-    fontSize: 70
+    fontSize: 20
   }
 };
 
