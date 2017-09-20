@@ -1,12 +1,16 @@
-//Index.ios.js - place code  in here for IOS
 
 import React from 'react';
-import {Text, AppRegistry} from 'react-native';
-import Header from './src/components/header'
+import {View, AppRegistry} from 'react-native';
+import Header from './src/components/Header'
+import AlbumList from './src/components/AlbumLists'
 
+//to return more than one component, you must wrap them in view tags
 const App = () => {
   return (
-    <Header headerText={'Albums are food'}/>
+    <View>
+      <Header headerText={'Albums are food'}/>
+      <AlbumList/>
+    </View>
   );
 };
 
