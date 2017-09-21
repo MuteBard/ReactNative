@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import {View, Text} from 'react-native';
-//https://www.youtube.com/watch?v=xmgY37oc_B4
-// DO NOT DO import axios from 'axios'
+import {View} from 'react-native';
 import * as axios from 'axios';
+import AlbumDetail from './AlbumDetail';
+
 console.ignoredYellowBox = ['Remote debugger'];
 class AlbumList extends Component {
   state = { albums: [] };
@@ -14,7 +14,10 @@ class AlbumList extends Component {
   }
   
   renderAlbums(){
-    return this.state.albums.map(elem => <Text>{elem.title}</Text>)
+    //we need to pass down the prop elem to AlbumDetail
+    return this.state.albums.map((elem, idx) => 
+      <AlbumDetail key={idx} album={elem}/>
+    );
   }
   
   
