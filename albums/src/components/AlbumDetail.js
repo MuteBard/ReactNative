@@ -20,7 +20,10 @@ const AlbumDetail = ({album}) => {
     headerTextStyle,
     imageStyle
   } = styles;
-  
+
+  //there is no concept of onPress in our custom button
+  //we pass down a function from the parent to the child
+  //and the child will execute the function
   return(
     <Card>
     
@@ -45,7 +48,7 @@ const AlbumDetail = ({album}) => {
       </CardSection>
       
       <CardSection>
-        <Button/>
+        <Button whenPressed={() => console.log(title)}/>
       </CardSection>
       
     </Card>
