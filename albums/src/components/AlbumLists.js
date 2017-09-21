@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View} from 'react-native';
+import {ScrollView} from 'react-native';
 import * as axios from 'axios';
 import AlbumDetail from './AlbumDetail';
 
@@ -14,20 +14,22 @@ class AlbumList extends Component {
   }
   
   renderAlbums(){
-    //we need to pass down the prop elem to AlbumDetail
     return this.state.albums.map((elem, idx) => 
       <AlbumDetail key={idx} album={elem}/>
     );
   }
   
-  
+  //We can scroll but everything seems to bounce back
+  //Whenever you have a scrollview, you must add a 
+  //style property of flex 1 to your root view element
+  //that means goto index.ios.js and the view in there
+  //you need to add the style
   render(){
-    // this.setState({albums: ['a','b','c']})
     console.log(this.state.albums)
     return(
-      <View>
+      <ScrollView>
         {this.renderAlbums()}
-      </View>
+      </ScrollView>
     );
   }  
 }

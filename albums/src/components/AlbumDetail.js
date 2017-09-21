@@ -43,13 +43,13 @@ const AlbumDetail = ({album}) => {
     </Card>
   ); 
 };
-//In the imageStyles object, we want to make sure that
-//we can span the image from across the screen and this
-//can be a bit tricky. code for it is below
 
-//After that is done, we face an issue where we cant scroll
-//down :c
-//the remedy for this is in the next git commit
+//By default, when you make a really large component in 
+//react native, it is not going to scroll, thankfully
+//fixing the scrolling issue is straight forward as it
+//requires simply two steps
+//identify jsx tags that we need to be scrollable (everything in AlbumList)
+//import scrollView from reactnative
 const styles = {
   headerContentStyle:{
     flexDirection : 'column',
