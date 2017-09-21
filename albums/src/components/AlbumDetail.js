@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, Image } from 'react-native';
 import Card from './Card'; 
 import CardSection from './CardSection'
+import Button from './Button'
 
 //Set up some margin on the "div" that is surrounding the 
 //image 
@@ -22,6 +23,7 @@ const AlbumDetail = ({album}) => {
   
   return(
     <Card>
+    
       <CardSection>
         <View style={thumbnailContainerStyle}>
           <Image 
@@ -34,22 +36,22 @@ const AlbumDetail = ({album}) => {
           <Text>{artist}</Text>
         </View>
       </CardSection>
+      
       <CardSection>
         <Image 
           style={imageStyle} 
           source={{uri: image}}
         />
       </CardSection>
+      
+      <CardSection>
+        <Button/>
+      </CardSection>
+      
     </Card>
   ); 
 };
 
-//By default, when you make a really large component in 
-//react native, it is not going to scroll, thankfully
-//fixing the scrolling issue is straight forward as it
-//requires simply two steps
-//identify jsx tags that we need to be scrollable (everything in AlbumList)
-//import scrollView from reactnative
 const styles = {
   headerContentStyle:{
     flexDirection : 'column',
