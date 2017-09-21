@@ -22,9 +22,10 @@ const AlbumDetail = ({album}) => {
     imageStyle
   } = styles;
 
-  //there is no concept of onPress in our custom button
-  //we pass down a function from the parent to the child
-  //and the child will execute the function
+  //you can pass in the children text 
+  //<Button> the child </Button>
+  //and in the button class you can pass down the child text to render it
+  
   return(
     <Card>
     
@@ -49,7 +50,9 @@ const AlbumDetail = ({album}) => {
       </CardSection>
       
       <CardSection>
-        <Button whenPressed={() => Linking.openURL(url)}/>
+        <Button whenPressed={() => Linking.openURL(url)}>
+          Buy Now
+        </Button>
       </CardSection>
       
     </Card>

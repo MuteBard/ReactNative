@@ -7,11 +7,11 @@ In the docs under APIS there is Linking
 
 */
 
-const Button = ({whenPressed}) => {
+const Button = ({whenPressed, children}) => {
   const {buttonStyle, textStyle} = styles;
   return(
     <TouchableOpacity onPress={whenPressed} style={buttonStyle}>
-      <Text style={textStyle}>Click me!!</Text>
+      <Text style={textStyle}>{children}</Text>
     </TouchableOpacity>
   );
 };
