@@ -2,14 +2,9 @@ import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 
 /*
-Go to te docs and look up
-TouchableHighlight
-TouchableNativeFeedback
-TouchableOpacity
-TouchableWithoutFeedback
+React Native linking is different from browser linking, there are no anchor tags
+In the docs under APIS there is Linking
 
-these are all glorified buttons
-this provides the user feedback
 */
 
 const Button = ({whenPressed}) => {
@@ -20,10 +15,7 @@ const Button = ({whenPressed}) => {
     </TouchableOpacity>
   );
 };
-/*remember flex : 1 means that I want this things to fill up as much content
-it can
-alignSelf: stretch means stretch to fill the limits of the container
-*/
+
 const styles = {
   buttonStyle:{
     flex: 1,
