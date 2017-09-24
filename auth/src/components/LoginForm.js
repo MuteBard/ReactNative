@@ -12,22 +12,31 @@ then refactor it and put it into a separate component
 like the image tags
 */
 class LoginForm extends Component{
-  state = {email:''}
+  state = {email:'', password:''}
 
+  //just by listing secureTextEntry, it will be truthy
   render(){
     return(
       <Card>
         <CardSection>
           <Input
             placeholder={'user@gmail.com'}
-            label={'Email'}
+            label="Email"
             value={this.state.email}
             onChangeText={email => this.setState({email})}
           />
+        </CardSection>
 
-        </CardSection>
         <CardSection>
+          <Input
+            secureTextEntry
+            placeholder={'password'}
+            label="password"
+            value={this.state.password}
+            onChangeText={password => this.setState({password})}
+          />
         </CardSection>
+        
         <CardSection>
           <Button>
             Log in
