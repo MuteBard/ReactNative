@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import firebase from 'firebase';
 import {Header} from './components/common';
+import LoginForm from './components/LoginForm'
 
 
 class App extends Component{
 
-  //lifecycle methods
+  //https://console.firebase.google.com/u/0/project/authentication-ac3a5/authentication/providers
   componentWillMount(){
-    firebase.initalizeApp({
+    firebase.initializeApp({
       apiKey: 'AIzaSyCXHVAQdsZSgDdMPhT-q55dA3dQvFvRqlw',
       authDomain: 'authentication-ac3a5.firebaseapp.com',
       databaseURL: 'https://authentication-ac3a5.firebaseio.com',
@@ -21,7 +22,7 @@ class App extends Component{
     return(
       <View>
         <Header headerText="Authentication"/>
-        <Text>THIS IS AN APP</Text>
+        <LoginForm/>
       </View>
     )
   }
